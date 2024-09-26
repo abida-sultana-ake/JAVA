@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class bitWiseAND
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Bitwise AND Checker");
+        System.out.print("Enter your first number a: ");
+        int a = input.nextInt();
+        System.out.print("Enter your second number b: ");
+        int b = input.nextInt();
+        int result = a & b;
+        System.out.print("The result is: " + result);
+    }
+}
