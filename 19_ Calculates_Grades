@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class calculatesGrades
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Gread Finder");
+        System.out.print("Enter your number a: ");
+        int a = input.nextInt();
+        if(a>90)
+        {
+            System.out.println("A+");
+        }
+        else if(a>75)
+        {
+            System.out.println("A");
+        }
+        else if(a>60)
+        {
+            System.out.println("A-");
+        }
+        else if(a>30)
+        {
+            System.out.println("B");
+        }
+        else
+        {
+            System.out.println("Fail");
+        }
+    }
+}
