@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class bitWiseEvenODD
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Bitwise EVEN ODD Checker");
+        System.out.print("Enter your number : ");
+        int num = input.nextInt();
+        if((num & 1) == 1)
+        {
+            System.out.print("Your Number is odd");
+        }
+        else
+        {
+            System.out.print("Your Number is even");
+        }
+    }
+}
