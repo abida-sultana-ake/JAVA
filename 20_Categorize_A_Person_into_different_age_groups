@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class AgeChecker
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Categorize a person into different age groups ");
+        System.out.print("Enter your number a: ");
+        int a = input.nextInt();
+        if(a<13)
+        {
+            System.out.println("Child");
+        }
+        else if(a<20)
+        {
+            System.out.println("Teen");
+        }
+        else if(a<60)
+        {
+            System.out.println("Adult");
+        }
+        else if(a>60)
+        {
+            System.out.println("Senior");
+        }
+    }
+}
