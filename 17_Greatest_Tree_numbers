@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class greatestNumber
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Greatest Three Number Finding");
+        System.out.print("Enter your number a: ");
+        int a = input.nextInt();
+        System.out.print("Enter your number b: ");
+        int b = input.nextInt();
+        System.out.print("Enter your number c: ");
+        int c = input.nextInt();
+        if(a>b && a>c)
+        {
+            System.out.println("The greates number : " + a);
+        }
+        else if(b>a && b>c)
+        {
+            System.out.println("The greates number : " + b);
+        }
+        else
+        {
+            System.out.println("The greates number : " + c);
+        }
+    }
+}
