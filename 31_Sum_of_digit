@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class sumOfDigit
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("___Welcome to Sum of Digits Calculator___");
+        System.out.print("Please, Enter your number : ");
+        int a = input.nextInt();
+        int sum = sumDigit(a);
+        System.out.print("The number of " + a + " is: " + sum);
+    }
+    public static int sumDigit (int num)
+    {
+        int sum = 0;
+        while (num > 0)
+        {
+            sum = sum + (num % 10); // ex : 123%10=3 sum=0; so, 0+3=3.
+            num = num/10; // 123/10 = 12
+        }
+        return sum;
+    }
+}
