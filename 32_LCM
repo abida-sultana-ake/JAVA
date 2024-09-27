@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class LCM
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("___Welcome to Least Common Multiple (LCM) Calculator___");
+        System.out.print("Please, Enter your first number : ");
+        int a = input.nextInt();
+        System.out.print("Please, Enter your second number : ");
+        int b = input.nextInt();
+        int l = LCM(a,b);
+        System.out.print("LCM of the two number is: " + l);
+    }
+    public static int LCM (int f, int s)
+    {
+        //The maximum value LCM could be is f * s
+        int max = f*s;
+        // Find the smallest multiple of f that is divisible by s
+        for (int i = 1; i<=max; i++)
+        {
+            int factor = f*i;
+            if (factor % s == 0)
+            {
+                return factor;
+            }
+        }
+        return max;
+    }
+}
