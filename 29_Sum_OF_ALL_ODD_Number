@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class sumOfAllOdd
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("___Welcome to Sum of all ODD NUMBER___");
+        System.out.print("Please, Enter your number for the limit: ");
+        int a = input.nextInt();
+        int sum = printsumOfAllOdd (a);
+        System.out.print("Odd Sum till " + a + " is: " + sum);
+    }
+    public static int printsumOfAllOdd (int num)
+    {
+        int sum = 0;
+        for(int i=1; i<=num; i+=2)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+}
