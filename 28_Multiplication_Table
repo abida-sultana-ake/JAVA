@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class multiplicationTable
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("___Welcome to Multiplication table___");
+        System.out.print("Please, Enter your number for Multiplication table: ");
+        int a = input.nextInt();
+        printMultiplicationTable (a);
+    }
+    public static void printMultiplicationTable (int num)
+    {
+        for(int i=1; i<=10; i++)
+        {
+            System.out.println(num + " X " + i + " = " + (num * i) );
+        }
+    }
+}
