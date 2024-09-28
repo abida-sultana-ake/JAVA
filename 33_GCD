@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class GCD
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("___WELCOME TO MY  Greatest Common Divisor (GCD)");
+        System.out.print("Please, Enter your First number: ");
+        int a = input.nextInt();
+        System.out.print("Please, Enter your Second number: ");
+        int b = input.nextInt();
+        int G = gcd(a,b);
+        System.out.print("The  Greatest Common Divisor (GCD) result is: " + G);
+    }
+    public static int gcd(int x, int y)
+    {
+        int temp;
+        while(y != 0)
+        {
+            temp = y;
+            y = x%y;
+            x = temp;
+        }
+        return x;
+    }
+}
