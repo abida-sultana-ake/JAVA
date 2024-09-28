@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class arraySearching
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int[] arr = {3,4,6,7,2,1,10,65,55,88};
+        System.out.println("Welcome to searching array");
+        System.out.print("Enter your seraching key = ");
+        int num = input.nextInt();
+        boolean isFound = isFound(arr,num);
+        if(isFound)
+        {
+            System.out.println("Founded the number");
+        }
+        else
+        {
+            System.out.println("Not Founded the number");
+        }
+    }
+    public static boolean isFound(int[] arr, int num)
+    {
+        for(int i=0; i< arr.length; i++)
+        {
+            if(arr[i] == num)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
