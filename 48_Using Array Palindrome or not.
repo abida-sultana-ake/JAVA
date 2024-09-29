@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class  deleteElement
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("--- Welcome to deleting a specific element world ---");
+        System.out.print("Enter your array size = ");
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        for(int i=0; i<size; i++)
+        {
+             System.out.print("Enter your array element number " + (i+1) + ": ");
+             arr[i] = input.nextInt();
+        }
+        boolean isPalin = isPalindrome(arr);
+        if (isPalin)
+        {
+            System.out.print("The number is palindrome");
+        }
+        else
+        {
+            System.out.print("The number is not palindrome");
+        }
+    }
+    public static boolean isPalindrome(int[] arr)
+    {
+        for(int i=0; i<arr.length/2; i++)
+        {
+            if(arr[i] != arr[arr.length - 1 -i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
