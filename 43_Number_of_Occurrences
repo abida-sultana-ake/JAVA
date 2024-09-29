@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class  numberofOccurrences 
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("--- Welcome to number of occurrences of an element in an array ---");
+        System.out.print("Enter your array size = ");
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        for(int i=0; i<size; i++)
+        {
+             System.out.print("Enter your array element number " + (i+1) + ": ");
+             arr[i] = input.nextInt();
+        }
+        System.out.print("Enter your number that you want to find = ");
+        int key = input.nextInt();
+        int oc = noOfOccurance(arr, key);
+        System.out.print("Your element " +key+ " is found " +oc+ " times in array" );
+    }
+    public static int noOfOccurance(int[] arr, int key)
+    {
+        int occ=0;
+        for(int i=0; i<arr.length; i++)
+        {
+            if(arr[i]==key)
+            {
+                occ++;
+            }
+        }
+        return occ;
+    }
+}
