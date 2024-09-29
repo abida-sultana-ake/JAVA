@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class  deleteElement
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("--- Welcome to deleting a specific element world ---");
+        System.out.print("Enter your array size = ");
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        for(int i=0; i<size; i++)
+        {
+             System.out.print("Enter your array element number " + (i+1) + ": ");
+             arr[i] = input.nextInt();
+        }
+        System.out.print("Enter the element that you want to delete = ");
+        int numToDelete = input.nextInt();
+        int[] newArr = deleteNumber(arr, numToDelete);
+        System.out.print("Here is your new array: ");
+        for (int i = 0; i < newArr.length; i++)
+        {
+            System.out.print(newArr[i] + " ");
+        }
+        System.out.println();
+    }
+    public static int noOfOccurance(int[] arr, int key)
+    {
+        int occ=0;
+        for(int i=0; i<arr.length; i++)
+        {
+            if(arr[i]==key)
+            {
+                occ++;
+            }
+        }
+        return occ;
+    }
+    public static int[] deleteNumber(int[] arr, int numToDelete)
+    {
+        int occ = noOfOccurance(arr, numToDelete);
+        if(occ == 0)
+        {
+            return arr;
+        }
+        int newSize = arr.length - occ;
+        int[] newArr = new int[newSize];
+        int j = 0;
+        for(int i=0; i<arr.length; i++)
+        {
+            if(arr[i] != numToDelete)
+                {
+                    newArr[j++] = arr[i]; //Add element to new array
+                }
+        }
+        return newArr;
+        }
+    }
