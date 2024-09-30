@@ -1,0 +1,76 @@
+import java.util.Scanner;
+public class merge2sorted
+{
+    public static void main (String[] arg)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("___Welcome to merge two sorted arrays___");
+        System.out.print("Enter your array size: ");
+        int size = input.nextInt();
+        
+        // 1st array
+        System.out.println("----For your first array----");
+        int[] arr = new int[size];
+        for(int i = 0; i < size; i++)
+        {
+            System.out.print("Enter your 1st array element number " + (i + 1) + ": ");
+            arr[i] = input.nextInt();
+        }
+
+        // 2nd array
+        int[] brr = new int[size];
+        System.out.println("----For your second array----");
+        for(int i = 0; i < size; i++)
+        {
+            System.out.print("Enter your 2nd array element number " + (i + 1) + ": ");
+            brr[i] = input.nextInt();
+        }
+        
+        // Merge both arrays
+        int[] mergedArr = merge(arr, brr);
+        
+        // Print the merged array
+        System.out.print("Your merged array is: ");
+        for(int i = 0; i < mergedArr.length; i++)
+        {
+            System.out.print(mergedArr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Method to merge two sorted arrays
+    public static int[] merge(int[] arr, int[] brr)
+    {
+        int newSize = arr.length + brr.length;
+        int[] newArr = new int[newSize];
+        
+        int i = 0, j = 0, k = 0;
+        
+        // Merge both arrays into newArr
+        while(i < arr.length && j < brr.length)
+        {
+            if(arr[i] < brr[j])
+            {
+                newArr[k++] = arr[i++];
+            }
+            else
+            {
+                newArr[k++] = brr[j++];
+            }
+        }
+        
+        // Copy remaining elements of arr, if any
+        while(i < arr.length)
+        {
+            newArr[k++] = arr[i++];
+        }
+        
+        // Copy remaining elements of brr, if any
+        while(j < brr.length)
+        {
+            newArr[k++] = brr[j++];
+        }
+        
+        return newArr;
+    }
+}
