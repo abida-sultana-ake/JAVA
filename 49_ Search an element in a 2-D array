@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class searchingElement2D
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("____WELCOME TO SEARCHING AN ELEMENT IN 2D ARRAY");
+        System.out.print("Enter the number of rows  for array: ");
+        int row = input.nextInt();
+        System.out.print("Enter the number of columns  for array: ");
+        int column = input.nextInt();
+        int[][] arr = new int[row][column];
+        for(int i=0; i<row; i++)
+        {
+            for(int j=0; j<column; j++)
+            {
+                System.out.print("Element at position [" + i + "][" + j + "]: ");
+                arr[i][j] = input.nextInt();
+            }
+        }
+        System.out.print("Enter the number that you want to search: ");
+        int key = input.nextInt();
+        boolean isFound = search(arr,key);
+        if(isFound)
+        {
+            System.out.print("Your number is founded");
+        }
+        else
+        {
+            System.out.print("Your number is not founded");
+        }
+    }
+    public static boolean search(int[][] arr, int key)
+    {
+        for(int i=0; i<arr.length; i++)
+        {
+            for(int j=0; j<arr.length; j++)
+            {
+                if(arr[i][j]==key)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
