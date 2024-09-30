@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class  sumAndAverage
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("____WELCOME TO  sum and average of all elements in a 2-D array____");
+        System.out.print("Enter the number of rows  for array: ");
+        int row = input.nextInt();
+        System.out.print("Enter the number of columns  for array: ");
+        int column = input.nextInt();
+        int[][] arr = new int[row][column];
+        for(int i=0; i<row; i++)
+        {
+            for(int j=0; j<column; j++)
+            {
+                System.out.print("Element at position [" + i + "][" + j + "]: ");
+                arr[i][j] = input.nextInt();
+            }
+        }
+        int sum = sum(arr);
+        double average = avg(arr);
+        System.out.println("The sum of all elements in the array is: " + sum);
+        System.out.println("The average of all elements in the array is: " + average);
+    }
+    public static int sum(int[][] arr)
+    {
+        int temp = 0;
+        for(int i=0; i<arr.length; i++)
+        {
+            for(int j=0; j<arr[i].length; j++)
+            {
+                temp = temp + arr[i][j];
+            }
+        }
+        return temp;
+    }
+    public static double avg(int[][] arr)
+    {
+        int totalSum = sum(arr);
+        int totalElement = arr.length * arr[0].length;
+        return (double) totalSum/ totalElement;
+    }
+}
