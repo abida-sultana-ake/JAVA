@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class DiagonalSum
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("____WELCOME TO DIAGONAL SUM OF A SQUARE 2D ARRAY____");
+        // Input the size of the square matrix
+        System.out.print("Enter the size of the square array (rows = columns): ");
+        int size = input.nextInt();
+        // Declare the square array
+        int[][] arr = new int[size][size];
+        // Input elements into the array
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                System.out.print("Element at position [" + i + "][" + j + "]: ");
+                arr[i][j] = input.nextInt();
+            }
+        }
+        // Calculate the sum of both diagonals
+        int primaryDiagonalSum = 0;
+        int secondaryDiagonalSum = 0;
+        for (int i = 0; i < size; i++)
+        {
+            // Sum for primary diagonal (where row == column)
+            primaryDiagonalSum += arr[i][i];
+            // Sum for secondary diagonal (where row + column == size - 1)
+            secondaryDiagonalSum += arr[i][size - i - 1];
+        }
+        // Print the results
+        System.out.println("The sum of the primary diagonal elements is: " + primaryDiagonalSum);
+        System.out.println("The sum of the secondary diagonal elements is: " + secondaryDiagonalSum);
+    }
+}
