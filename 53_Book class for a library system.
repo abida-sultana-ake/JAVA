@@ -1,0 +1,81 @@
+class Book
+{
+    // Static variable to keep track of the total number of books
+    static int totalNoOfBooks;
+    // Instance variables
+    String author;
+    String title;
+    String isbn;
+    boolean isBorrowed;
+    // Static block for initialization
+    static
+    {
+        totalNoOfBooks = 0;
+    }
+    // Constructor block to increment the total number of books
+    {
+        totalNoOfBooks++;
+    }
+    // Constructor with all parameters
+    public Book(String author, String title, String isbn, boolean isBorrowed)
+    {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.isBorrowed = isBorrowed;
+    }
+    // Constructor with default values for title and author
+    public Book(String isbn)
+    {
+        this(isbn, "Unknown", "Unknown", false);
+    }
+    // Method to borrow a book
+    public void borrowBook()
+    {
+        if (isBorrowed)
+        {
+            isBorrowed = true;
+            System.out.println(title + " has been borrowed.");
+        }
+        else
+        {
+            System.out.println(title + " is already borrowed.");
+        }
+    }
+    // Method to return a book
+    public void returnBook()
+    {
+        if (isBorrowed)
+        {
+            isBorrowed = false;
+            System.out.println(title + " has been returned.");
+        }
+        else
+        {
+            System.out.println(title + " was not borrowed.");
+        }
+    }
+    // Static method to get the total number of books
+    public static int getTotalBooks()
+    {
+        return totalNoOfBooks;
+    }
+    // Main method to test the class
+    public static void main(String[] args)
+    {
+        // Create some book objects
+        Book book1 = new Book("Robert C. Martin", "Clean Code", "1", false);
+        Book book2 = new Book("Frederick Brooks", "The Mythical Man-Month", "2", false);
+        Book book3 = new Book("3");
+        // Output total number of books
+        System.out.println("Total number of books: " + Book.getTotalBooks());
+        // Borrow and return books
+        book1.borrowBook();
+        book2.borrowBook();
+        book3.borrowBook();
+        book1.returnBook();
+        book1.returnBook(); // Trying to return an already returned book
+        // Output the final total number of books
+        System.out.println("Total number of books: " + Book.getTotalBooks());
+    }
+}
