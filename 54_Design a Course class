@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+
+// Course Class
+class Course
+{
+    static int maxCapacity; // Maximum number of students for any course
+    String courseName; // Name of the course
+    ArrayList<String> enrolledStudents; // List of enrolled students
+
+    // Static method to set the maximum capacity for courses
+    public static void setMaxCapacity(int capacity)
+    {
+        maxCapacity = capacity;
+    }
+
+    // Constructor
+    public Course(String courseName)
+    {
+        this.courseName = courseName;
+        this.enrolledStudents = new ArrayList<>();
+    }
+
+    // Method to enroll a student
+    public void enrollStudent(String studentName)
+    {
+        if (enrolledStudents.size() < maxCapacity)
+        {
+            enrolledStudents.add(studentName);
+            System.out.println(studentName + " has been enrolled in " + courseName + ".");
+        }
+        else
+        {
+            System.out.println("Cannot enroll " + studentName + ": Course is full.");
+        }
+    }
+
+    // Method to unenroll a student
+    public void unenrollStudent(String studentName)
+    {
+        if (enrolledStudents.remove(studentName))
+        {
+            System.out.println(studentName + " has been unenrolled from " + courseName + ".");
+        }
+        else
+        {
+            System.out.println(studentName + " is not enrolled in " + courseName + ".");
+        }
+    }
+
+    // Method to get the number of enrolled students
+    public int getEnrolledCount()
+    {
+        return enrolledStudents.size();
+    }
+}
+
+// Main Class
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Course.setMaxCapacity(3); // Set the maximum capacity for courses
+        
+        Course javaCourse = new Course("Java Programming");
+        
+        javaCourse.enrollStudent("Alice");
+        javaCourse.enrollStudent("Bob");
+        javaCourse.enrollStudent("Charlie");
+        javaCourse.enrollStudent("Dave"); // This should print that the course is full
+        
+        System.out.println("Enrolled students count: " + javaCourse.getEnrolledCount());
+        
+        javaCourse.unenrollStudent("Alice");
+        javaCourse.enrollStudent("Dave"); // Now this should succeed
+    }
+}
