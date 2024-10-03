@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class numberGussingGame
+{
+    public static void main (String [] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("______Welcome to password checker______");
+        int num = 5;
+        int guess;
+        do
+        {
+            System.out.print("Please, Guess the number between (1-10) :  ");
+            guess = input.nextInt();
+            if(guess != num)
+            {
+                System.out.println("Ohooo! Your guess is wrong, Please try again.");
+            }
+        }
+        while(num != guess);
+        System.out.println("Yohooooo! Well done, you guess the correct number");
+    }
+}
