@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class findMinimum
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to find the minimum of two numbers");
+        System.out.print("Enter your first number: ");
+        int num1 = input.nextInt();
+        System.out.print("Enter your second number: ");
+        int num2 = input.nextInt();
+        int min= num1<num2? num1 : num2;
+        System.out.println(min +" is minimum number");
+    }
+}
