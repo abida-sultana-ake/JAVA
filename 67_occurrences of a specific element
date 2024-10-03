@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class  occurrencesSpecificElement
+{
+    public static void main (String [] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Welcome for-each  to the occurrences of a specific element in an array");
+        System.out.print("Enter array size: ");
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        System.out.print("Enter array elements: ");
+        for(int i=0; i<size; i++)
+        {
+            arr[i] = input.nextInt();
+        }
+        System.out.print("Enter the number that you want to search: ");
+        int key = input.nextInt();
+        int occ = countOccurences(arr, key);
+        System.out.print("Your element was found: " + occ + " times");
+    }
+    public static int countOccurences(int[] arr, int key)
+    {
+        int occ = 0;
+        for(int arrs : arr)
+        {
+            if(arrs == key)
+            {
+                occ++;
+            }
+        }
+        return occ;
+    }
+}
