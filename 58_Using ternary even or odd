@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class ternaryevenOrodd
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to find the even or odd");
+        System.out.print("Enter your number: ");
+        int num1 = input.nextInt();
+        String result = num1%2==0? num1+ " is even number" : num1+ " is odd number";
+        System.out.println(result);
+    }
+}
