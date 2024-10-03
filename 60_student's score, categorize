@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class  studentScore
+{
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to calculate the  student's score ");
+        System.out.print("Enter your marks number: ");
+        int marks = input.nextInt();
+        String category = marks > 80? "Hight" : (marks > 50 ? "Moderate" : "Low");
+        System.out.println("Your category is : " + category);
+    }
+}
