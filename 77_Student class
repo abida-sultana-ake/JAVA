@@ -1,0 +1,29 @@
+//Define a Student class with fields like name and age, and use toString to print student details
+public class studentToString
+{
+    String name;
+    int age;
+    String rollNumber;
+    String house;
+    // constructor
+    public studentToString (String name, int age, String rollNumber, String house)
+    {
+        this.name       = name;
+        this.age        = age;
+        this.rollNumber = rollNumber;
+        this.house      = house;
+    }
+    @Override
+    public String toString()
+    {
+        return "Student Details: {name: " + name 
+        + ", age: " + age 
+        + ", roll number:" + rollNumber 
+        + ", house: " + house + " }";
+    }
+    public static void main (String[] args)
+    {
+        studentToString stu = new studentToString ("Abida", 22, "233014212", "109/2A-Dhaka");
+        System.out.println(stu);
+    }
+}
