@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class sumPositive
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to adding positive numbers.");
+        System.out.print("Please, enter your size of array: ");
+        int size = input.nextInt();
+        int[] arr = new int[size]; 
+        System.out.print("Please, enter the element of array: ");
+        for(int i=0; i<size; i++)
+        {
+            arr[i] = input.nextInt();
+        }
+        int sum = 0;
+        for(int num : arr)
+        {
+            if(num < 0)
+            {
+                continue;
+            }
+            else
+            {
+                sum += num;
+            }
+        }
+        System.out.print("Sum of positive number is: " + sum);
+    }
+}
