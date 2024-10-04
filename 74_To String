@@ -1,0 +1,40 @@
+public class Car
+{
+    int noOfWheels;
+    int noOfDoors;
+    int maxSpeed;
+    String name;
+    String modelNumber;
+    String company;
+    // constructor
+    public Car(int noOfWheels,int noOfDoors,int maxSpeed,String name,String modelNumber,String company)
+    {
+        this.noOfWheels  = noOfWheels;
+        this.noOfDoors   = noOfDoors;
+        this.maxSpeed    = maxSpeed;
+        this.name        = name;
+        this.modelNumber = modelNumber;
+        this.company     = company;
+    }
+    /*@Override
+    public String toString()
+    {
+        return "My Car name is: " + name + "\nMy Car model number is: " + modelNumber;
+    }*/
+    @Override
+    public String toString()
+    {
+        return "Car Details:\n" +
+        "Name: " + name + "\n" +
+        "Model Number: " + modelNumber + "\n" +
+        "Company: " + company + "\n" +
+        "Number of Wheels: " + noOfWheels + "\n" +
+        "Number of Doors: " + noOfDoors + "\n" +
+        "Max Speed: " + maxSpeed + " km/h";
+    }
+    public static void main(String[] args)
+    {
+        Car swift = new Car(4,4,120,"Swift","Sw126","Maruti");
+        System.out.println(swift);
+    }
+}
