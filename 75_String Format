@@ -1,0 +1,15 @@
+public class stringFormat
+{
+    public static void main(String[] args)
+    {
+        String name = "Aka";
+        int marks = 45;
+        System.out.println("Hello! " + name + ", your marks are:  " + 45);
+        System.out.printf("Hello! %s,  your marks are: %d \n", name, marks);
+        // Printf format not println 
+        System.out.printf("Hello! %S,  your marks are: %d\n", name, marks);
+        // %S Aka --> AKA 
+        System.out.printf("Hello! %15S,  your marks are: %d", name, marks);
+        // %15S --> 15 space between Hello! to AKA
+    }
+}
