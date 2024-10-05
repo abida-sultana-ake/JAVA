@@ -1,0 +1,39 @@
+//Calculate the area and circumference of a circle for a given radius 
+using Math.P
+import java.util.Scanner;
+public class Circle
+{
+    //properties
+    double radiusInMm;
+    //constructur
+    Circle(double radiusInMm)
+    {
+        this.radiusInMm = radiusInMm;
+    }
+    // method
+    double getCircumference()
+    {
+        return 2 * radiusInMm * Math.PI;
+    }
+    double getArea()
+    {
+        return Math.PI * Math.pow(radiusInMm, 2);
+    }
+    @Override 
+    public String toString()
+    {
+        return "Circle Properties:\n"
+                + "Radius in mm: " + radiusInMm + "\n"
+                + "Circumference in mm: " +  getCircumference() + "\n"
+                + "Area in mm: " +  getArea();
+    }
+    public static void main (String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to the world of circle");
+        System.out.print("Please, Enter your radius: ");
+        double radius = input.nextDouble();
+        Circle circle = new Circle(radius);
+        System.out.println(circle);
+    }
+}
