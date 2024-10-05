@@ -1,0 +1,11 @@
+//Concatenate and Convert: Take two strings, concatenate them, and convert the result to uppercase
+public class stringManipulation
+{
+    public static void main (String[] args)
+    {
+        String firstName = "Abida";
+        String lastName = "Sultana";
+        String fullName = firstName.concat(" ").concat(lastName);
+        System.out.println(fullName.toUpperCase()); // ABIDA SULTANA, if i don't use .toUpperCase() then the output will be Abida Sultana
+    }
+}
