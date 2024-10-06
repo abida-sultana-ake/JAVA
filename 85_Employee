@@ -1,0 +1,63 @@
+//Define a class Employee with private attributes (like name, age, and salary), public methods to get and set these attributes, and apackage-private method to displayEmployeeDetails. Create another class in the same package to test access to the 
+//displayEmployeeDetails method
+//Package
+package Challange_84;
+
+class Employee
+{
+    private String name;
+    private int age;
+    private double salary;
+
+    Employee(String name, int age, double salary)
+    {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+    // package private means deafult
+    String getEmployeeDetails()
+    {
+        return "Name: " + name + ", Age: " + age + ", Salary: " + salary;
+    }
+// getter and setter
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    public int getAge()
+    {
+        return age;
+    }
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+    public double getSalary()
+    {
+        return salary;
+    }
+    public void setSalary(double salary)
+    {
+        this.salary = salary;
+    }
+
+}
+// test employee
+package Challange_84;
+
+public class testEmployee
+{
+    public static void main(String[] args)
+    {
+        Employee em = new Employee("Abida Sultana", 22, 1000);
+        System.out.println(em.getEmployeeDetails());
+        em.setAge(23);
+        System.out.println(em.getEmployeeDetails());
+    }
+}
