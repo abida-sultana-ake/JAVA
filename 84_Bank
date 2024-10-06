@@ -1,0 +1,56 @@
+//Package
+package Challange_83;
+class bankAccount
+{
+    private String accountNumber;
+    private String accountHolderName;
+    private double accountBalance;
+    // constructor
+    public bankAccount(String accountNumber, String accountHolderName)
+    {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+    }
+    public void  depositMoney(double money)
+    {
+        if(money <= 0)
+        {
+            System.out.println("Invalid money");
+        }
+        else
+        {
+            accountBalance += money;
+        }
+    }
+    public double withdraw(double money)
+    {
+        if(money >= accountBalance)
+        {
+            System.out.println("Invalid money");
+        }
+        else if (money <= 0)
+        {
+            accountBalance -= money;
+        }
+        else
+        {
+            money = accountBalance;
+            accountBalance = 0;
+        }
+        return money;
+    }
+}
+// Coustomer Java
+package Challange_83;
+
+public class Coustomer
+{
+    public static void main(String[] args)
+    {
+        bankAccount account = new bankAccount("001", "Abida Sultana");
+        account.depositMoney(100);
+        System.out.println(account.withdraw(200));
+        account.depositMoney(-40);
+        account.withdraw(0);
+    }
+}
