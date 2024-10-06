@@ -1,0 +1,42 @@
+//Circle package
+package bd.abidacoding.geometry;
+
+public class circle
+{
+    public double radius;
+
+    public circle(double radius)
+    {
+        this.radius = radius;
+    }
+}
+// Rectangle
+package bd.abidacoding.geometry;
+
+public class rectangle
+{
+    public int length;
+    public int breadth;
+    public rectangle(int length, int breadth)
+    {
+        this.length = length;
+        this.breadth = breadth;
+    }
+}
+// calculation
+package bd.abidacoding.util;
+
+import bd.abidacoding.geometry.circle;
+import bd.abidacoding.geometry.rectangle;
+
+public class calculation
+{
+    public static void main(String[] args)
+    {
+        circle  cir = new circle(5.5);
+        rectangle  rect = new rectangle(10, 5);
+        double cirArea = Math.PI * Math.pow(cir.radius,2);
+        double rectArea = rect.breadth * rect.length;
+        System.out.println("Area of the circle is: " + cirArea + " and the area of the rectangle is: " + rectArea);
+    }
+}
