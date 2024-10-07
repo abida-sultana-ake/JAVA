@@ -1,0 +1,115 @@
+/* Start with a base class LibraryItem that includes common attributes like itemID, title, and author, and methods like checkout() and returnItem(). Create subclasses such as Book, Magazine, and DVD, each inheriting from LibraryItem. Add unique 
+attributes to each subclass, like ISBN for Book, issueNumber forMagazine, and duration for DVD.*/
+//LibraryItem
+package Challange_85;
+
+public class LibraryItem
+{
+    private String itemId;
+    private String title;
+    private String author;
+
+    // constructor
+    public LibraryItem(String itemId, String title, String author)
+    {
+        this.itemId = itemId;
+        this.title = title;
+        this.author = author;
+    }
+
+
+    // method
+    public void checkout()
+    {
+        System.out.println("Checkout");
+    }
+    public void returnItem()
+    {
+        System.out.println("Returning the item");
+    }
+
+    // toString
+    @Override
+    public String toString()
+    {
+        return "Item ID: " + itemId +
+                "Title: " + title +
+                "Author: " + author;
+    }
+}
+//Book
+package Challange_85;
+
+public class Book extends LibraryItem
+{
+    private String ISBN;
+
+    // constructor
+    public Book(String itemId, String title, String author, String ISBN)
+    {
+        super(itemId, title, author);
+        this.ISBN = ISBN;
+    }
+    @Override
+    public String toString()
+    {
+        return super.toString() + "\nISBN: " + ISBN;
+    }
+}
+//Magazine
+package Challange_85;
+
+public class Magazine extends LibraryItem
+{
+    private String issueNumber;
+    public Magazine(String itemId, String title, String author, String issueNumber)
+    {
+        super(itemId, title, author);
+        this.issueNumber = issueNumber;
+    }
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", Issue Number: " + issueNumber;
+    }
+}
+//DVD
+package Challange_85;
+
+public class DVD extends LibraryItem
+{
+    private int durationInSeconds;
+    public DVD(String itemId, String title, String author, int durationInSeconds)
+    {
+        super(itemId, title, author);
+        this.durationInSeconds = durationInSeconds;
+    }
+    @Override
+    public String toString()
+    {
+        return super.toString() + " , Duration: " + durationInSeconds + " seconds";
+    }
+}
+//testLibraryItem
+package Challange_85;
+
+public class testLibraryItem
+{
+    public static void main(String[] args)
+    {
+        // Creating instance
+        Book book = new Book("B001", "Java Programming", "John Doe", "978-1234567890");
+        Magazine magazine = new Magazine("M001", "Tech Monthly", "Jane Doe", "Issue 42");
+        DVD dvd = new DVD("D001", "The Matrix", "The Waschowskis", 900);
+
+        // display
+        System.out.println("Book: " + book);
+        System.out.println("Magazine: " + magazine);
+        System.out.println("DVD: " + dvd);
+
+        // Testing methods
+        book.checkout();
+        magazine.checkout();
+        dvd.checkout();
+    }
+}
