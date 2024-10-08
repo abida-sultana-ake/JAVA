@@ -1,0 +1,139 @@
+// Create a class Person with attributes name and age. Override equals() to compare Person objects based on their attributes. Override hashCode() consistent with the definition of equals().
+//Person package
+package Challange_87;
+
+public class Person
+{
+    public  String name;
+    private  int age;
+
+    //constructor
+    public Person(String name, int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+    // method
+    public void check()
+    {
+        System.out.println("Checked Person");
+    }
+    // toString
+    @Override
+    public String toString()
+    {
+        return "Person: " +
+                "Name= " + name +
+                ", Age= " + age ;
+
+    }
+}
+// Name package
+package Challange_87;
+
+public class Name
+{
+    public String firstName;
+    public String lastName;
+    public Name(String firstName, String lastName)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    @Override
+    public String toString()
+    {
+        return "Name: " +
+                "First Name= " + firstName +
+                ", Last Name=" + lastName;
+    }
+}
+// Age package
+package Challange_87;
+
+public class Age
+{
+    private int age;
+
+    // Constructor with validation
+    public Age(int age)
+    {
+        if (age < 0)
+        {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+        this.age = age;
+    }
+
+    // Getter
+    public int getAge()
+    {
+        return age;
+    }
+
+    // Setter with validation
+    public void setAge(int age)
+    {
+        if (age < 0)
+        {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+        this.age = age;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Age: " + age;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        // 1. Check if the current object is being compared to itself
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass())
+        {
+            return false;
+        }
+        // 3. Cast the 'obj' to an 'Age' object so we can compare the age attribute
+        Age other = (Age) obj;
+        // 4. Compare the 'age' fields of the two objects for equality
+        return age == other.age;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Integer.hashCode(age);
+    }
+}
+// testPerson
+package Challange_87;
+
+public class testPerson
+{
+    public static void main(String[] args)
+    {
+        Name name1 = new Name("Abida", "Sultana");
+        Name name2 = new Name("Khuzu", "Monowar");
+        Name name3 = new Name("Fairuz", "Faiza");
+        Age age1 = new Age(23);
+        Age age2 = new Age(22);
+        Age age3 = new Age(21);
+        System.out.println(name1);
+        System.out.println(name2);
+        System.out.println(name3);
+        System.out.println(age1);
+        System.out.println(age2);
+        System.out.println(age3);
+        //TEST EQUALITY BETWEEN THREE DIFFERENT NAME OBJECTS
+        System.out.println(name1.equals(name2));
+        System.out.println(name1.equals(name3));
+        System.out.println(age1.equals(age2));
+        System.out.println(age1.equals(age3));
+    }
+}
