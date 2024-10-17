@@ -1,0 +1,56 @@
+//Movie
+package Movie;
+
+public class Movie
+{
+    String title;
+    String genre;
+    String leadActor;
+    String director;
+    int releaseYear;
+    int rating;
+    String review;
+
+    public Movie(String title, String genre, String leadActor, String director, int releaseYear, int rating)
+    {
+        this.title = title;
+        this.genre = genre;
+        this.leadActor = leadActor;
+        this.director = director;
+        this.releaseYear = releaseYear;
+        this.rating = rating;
+        if (this.rating < 5)
+        {
+            this.review = "This movie is not Good ";
+        }
+        else
+        {
+            this.review = "This movie is  Good ";
+        }
+    }
+
+    void displayMovie()
+    {
+        System.out.println("Title: " + this.title);
+        System.out.println("Genre: " + this.genre);
+        System.out.println("Lead Actor: " + this.leadActor);
+        System.out.println("Director: " + this.director);
+        System.out.println("Release Year: " + this.releaseYear);
+        System.out.println("Rating: " + this.rating);
+        System.out.println("Review: " + this.review);
+    }
+}
+//testMovie
+package Movie;
+
+public class testMovie
+{
+    public static void main(String[] args)
+    {
+        Movie m1 = new Movie("The Imitation Game", "Biography, Drama, History", "Benedict Cumber batch", "Morten Mysqldump", 2014, 8);
+        Movie m2 = new Movie("Hackers", "Thriller", "Jonny Lee Miller", "Iain Softly", 1995, 4);
+        m1.displayMovie();
+        System.out.println();
+        m2.displayMovie();
+    }
+}
