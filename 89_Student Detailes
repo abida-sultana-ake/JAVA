@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Student
+{
+    private int id;
+    private String name;
+    private String department;
+    private double cgpa;
+    static String university = "University of Liberal Arts Bangladesh"; 
+    static int totalStudents = 0;
+    public Student(int id, String name, String department, double cgpa)
+    {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.cgpa = cgpa;
+        totalStudents++;
+    }
+    public void displayDetails()
+    {
+        System.out.println("Student ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("CGPA: " + cgpa);
+        System.out.println("University: " + university);
+        System.out.println();
+    }
+    public static void displayTotalStudents()
+    {
+        System.out.println("Total number of students: " + totalStudents);
+    }
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        Student[] students = new Student[3];
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Enter details for Student " + (i + 1) + ":");
+            System.out.print("Enter ID: ");
+            int id = input.nextInt();
+            input.nextLine();
+            System.out.print("Enter Name: ");
+            String name = input.nextLine();
+            System.out.print("Enter Department: ");
+            String department = input.nextLine();
+            System.out.print("Enter CGPA: ");
+            double cgpa = input.nextDouble();
+            input.nextLine(); 
+            students[i] = new Student(id, name, department, cgpa);
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            System.out.println("Student " + (i + 1) + " Details:");
+            students[i].displayDetails();
+        }
+        displayTotalStudents();
+    }
+}
